@@ -34,12 +34,20 @@ public:
 private:
 	int32 WaveCount = 0;
 
-	int32 CurrentEvilSpheresOnLevel = 0;	
+	int32 CurrentEvilSpheresOnLevel = 0;
+
+	int32 DestroyedSpheres = 0;
 
 protected:
 	virtual void BeginPlay() override;
 	
 	FVector CalculateSphereRandomLocation();
+	
+	UFUNCTION(BlueprintCallable)
+	int32 GetDestroyedSpheresNumber() const { return DestroyedSpheres; }
+
+	UFUNCTION(BlueprintCallable)
+    int32 GetWaveNumber() const { return WaveCount; }
 
 	void SphereDefeated();
 

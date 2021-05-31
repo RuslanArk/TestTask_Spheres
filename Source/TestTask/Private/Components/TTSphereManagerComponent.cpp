@@ -69,6 +69,7 @@ FVector UTTSphereManagerComponent::CalculateSphereRandomLocation()
 void UTTSphereManagerComponent::SphereDefeated()
 {
 	CurrentEvilSpheresOnLevel--;
+	DestroyedSpheres++;
 	if (CurrentEvilSpheresOnLevel < 5)
 	{
 		SpawnSpheres();
